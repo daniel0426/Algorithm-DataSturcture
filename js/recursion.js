@@ -112,4 +112,25 @@ function fib(n){
   return fib(n-1) + fib(n-2)
 }
 
-console.log(fib(10))
+// console.log(fib(10))
+
+
+//Write a recursive function called reverse which accepts
+//a string and returns a new string in reverse
+
+function reverse(str){
+  if(str.length <= 1) return str;
+  return reverse(str.slice(1)) + str[0]
+}
+
+// console.log(reverse('hello'))
+
+
+//write a recursive function called isPalindrome which returns true
+//if the string passed to it is a palindrome (reads the same forward and backward)
+//else it returns false
+
+function isPalindrome(str){
+
+}
+
