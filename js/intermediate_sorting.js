@@ -64,8 +64,25 @@ function pivot(arr, start=0, end=arr.length-1){
   }
  }
  swap(arr, start, swapIdx)
- console.log(arr)
  return swapIdx
 }
 
-pivot([4,8,2,1,5,7,6,3])
+// pivot([4,8,2,1,5,7,6,3])
+
+
+//QUICK SORT 
+
+function quickSort(arr, left=0, right=arr.length-1){
+  if(left<right){
+    let pivotIndex = pivot(arr, left, right)
+    //left side
+    quickSort(arr, left,pivotIndex-1)
+    //rightSide 
+    quickSort(arr, pivotIndex+1, right )
+  }
+return arr
+
+  
+}
+
+console.log(quickSort([4,8,2,1,5,7,6,3]))
