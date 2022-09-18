@@ -55,14 +55,47 @@ class SinglyLinkedList {
      }
     return currentHead;
   }
+
+  unshift(val){
+    let newNode = new Node(val);
+    if(!this.head){
+      this.head = newNode;
+      this.tail = newNode;
+    } else {
+      newNode.next = this.head;
+      this.head = newNode;
+    }
+    this.length++;
+    return this;
+  }
+
+  get(index){
+    if(index < 0 || index >= this.length) return null;
+    let counter = 0;
+    let current = this.head;
+    while(counter !== index){
+      current= current.next;
+      counter++
+    }
+    return current;
+
+  }
+
+  set(index, val){
+    let foundNode = this.get(index);
+    if(foundNode){
+      foundNode.val = val;
+    }
+    return false;
+  }
 }
 
 let list = new SinglyLinkedList()
 list.push('hello')
 list.push('bye')
-list.push(99)
-list.shift()
+list.push('awdad')
+list.push('eijia0')
+list.set(10, 'bye awdad')
+console.log(list.get(2))
 
-
-console.log(list)
 
